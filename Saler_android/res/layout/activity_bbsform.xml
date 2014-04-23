@@ -1,0 +1,99 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:orientation="vertical" >
+
+    <include layout="@layout/layout_title_bar" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="@string/bbs_type"
+        android:textColor="@color/black" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/record_divided" />
+
+    <RadioGroup
+        android:id="@+id/type_group"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <RadioButton
+            android:id="@+id/fresh_rb"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:checked="true"
+            android:text="@string/fresh_tab"
+            android:textColor="@color/black" />
+
+        <RadioButton
+            android:id="@+id/activity_rb"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/activity_tab"
+            android:textColor="@color/black" />
+
+        <RadioButton
+            android:id="@+id/question_rb"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/question_tab"
+            android:textColor="@color/black" />
+    </RadioGroup>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/record_divided" />
+
+    <EditText
+        android:id="@+id/bbs_title_et"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:ems="10"
+        android:maxLines="1"
+        android:maxLength="40"
+        android:hint="@string/bbs_title" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="220dp"
+        android:layout_marginBottom="5dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp" >
+
+        <com.koolbao.saler.widge.RecordEditText
+            android:id="@+id/bbs_txt_tv"
+            android:layout_width="match_parent"
+            android:layout_height="220dp"
+            android:ems="10"
+            android:gravity="start"
+            android:hint="@string/bbs_hint"
+            android:inputType="textMultiLine" />
+
+        <TextView
+            android:id="@+id/char_warn_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/bbs_txt_tv"
+            android:layout_alignRight="@+id/bbs_txt_tv"
+            android:layout_marginBottom="10dp"
+            android:layout_marginRight="10dp"
+            android:text="@string/char_warn"
+            android:textColor="@android:color/black" />
+    </RelativeLayout>
+
+</LinearLayout>

@@ -1,0 +1,61 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:orientation="vertical" >
+
+    <include layout="@layout/layout_title_bar" />
+
+    <ProgressBar
+        android:id="@+id/loading_pb"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:progress="0"
+        android:progressDrawable="@drawable/barcolor"
+        android:visibility="visible" />
+
+    <WebView
+        android:id="@+id/news_wbv"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height=".5dp"
+        android:background="@color/post_divided" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/search_bg"
+        android:gravity="center"
+        android:padding="10dp" >
+
+        <Button
+            android:id="@+id/good_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/like_btn"
+            android:drawableLeft="@drawable/like_icon"
+            android:paddingLeft="10dp"
+            android:text="@string/count_demo"
+            android:textColor="@color/like_txt"
+            android:textSize="@dimen/tips_size" />
+
+        <Button
+            android:id="@+id/bad_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:background="@drawable/unlike_btn"
+            android:drawableLeft="@drawable/unlike_icon"
+            android:drawablePadding="5dp"
+            android:paddingLeft="10dp"
+            android:text="@string/count_demo"
+            android:textColor="@color/like_txt" />
+    </LinearLayout>
+
+</LinearLayout>

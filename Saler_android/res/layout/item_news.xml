@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:id="@+id/time_bar_linear"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="horizontal" >
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height=".5dp"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:background="@color/post_divided" />
+
+        <TextView
+            android:id="@+id/time_bar_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:text="@string/time_bar"
+            android:textColor="@color/time_txt" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height=".5dp"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:background="@color/post_divided" />
+    </LinearLayout>
+
+    <View
+        android:id="@+id/divided_line"
+        android:layout_width="match_parent"
+        android:layout_height=".5dp"
+        android:layout_marginLeft="20dp"
+        android:background="@color/post_divided" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingBottom="20dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:paddingTop="20dp" >
+
+        <TextView
+            android:id="@+id/letter_title_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/letter_icon"
+            android:drawablePadding="5dp"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:maxWidth="230dp"
+            android:text="@string/letter_title"
+            android:textColor="@color/post_title"
+            android:textSize="@dimen/tips_size" />
+
+        <TextView
+            android:id="@+id/letter_time_tv"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_weight="1"
+            android:drawableRight="@drawable/right_arrow"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="@string/letter_time"
+            android:textColor="@color/time_txt" />
+    </LinearLayout>
+    
+    <View
+        android:id="@+id/last_line"
+        android:layout_width="match_parent"
+        android:layout_height=".5dp"
+        android:layout_marginLeft="20dp"
+        android:background="@color/post_divided"
+        android:visibility="gone" />
+
+</LinearLayout>

@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.koolbao.saler"
+    android:versionCode="1"
+    android:versionName="1.2" >
+"
+    <uses-sdk
+        android:minSdkVersion="13"
+        android:targetSdkVersion="18" />
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.MANAGE_ACCOUNTS" />
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature android:name="android.hardware.camera.autofocus" />
+
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.FLASHLIGHT" />
+
+    <application
+        android:name="com.activeandroid.app.Application"
+        android:allowBackup="true"
+        android:icon="@drawable/logo"
+        android:label="@string/app_name"
+        android:theme="@android:style/Theme.NoTitleBar" >
+        <meta-data
+            android:name="AA_DB_NAME"
+            android:value="saler.db" />
+        <meta-data
+            android:name="AA_DB_VERSION"
+            android:value="1" />
+        
+        <meta-data
+            android:name="UMENG_APPKEY"
+            android:value="534b585a56240b40f5014bdc" >
+        </meta-data>
+        <meta-data
+            android:name="UMENG_CHANNEL"
+            android:value="Koolbao" />
+
+        <activity
+            android:name="com.koolbao.saler.NavigateActivity"
+            android:screenOrientation="portrait" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.koolbao.saler.LoginActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.koolbao.saler.RegistActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.koolbao.saler.UserActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.koolbao.saler.NewsActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.koolbao.saler.CommunicateActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustNothing" />
+        <activity
+            android:name="com.koolbao.saler.ShopActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.koolbao.saler.FlashActivity"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name="com.koolbao.saler.AlarmActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.koolbao.saler.GrowupActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.koolbao.saler.SoftwareActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.koolbao.saler.NewsContentActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.koolbao.saler.RecordFormActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.koolbao.saler.AuthorizeActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.koolbao.saler.CaptureActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name="com.koolbao.saler.wxapi.WXEntryActivity"
+            android:exported="true" />
+        <activity
+            android:name="com.koolbao.saler.NickModifyActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.koolbao.saler.BBSFormActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.koolbao.saler.BBSContentActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name="com.koolbao.saler.UserPostActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.koolbao.saler.ForgetPsdActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.koolbao.saler.AboutUsActivity"
+            android:screenOrientation="portrait" />
+    </application>
+
+</manifest>

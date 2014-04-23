@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:id="@+id/first_line_linear"
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:background="@color/record_first_linear" >
+
+        <View
+            android:layout_width=".5dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="35dp"
+            android:background="@color/kb_yellow" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/top_divided_line"
+        android:layout_width="match_parent"
+        android:layout_height=".5dp" >
+
+        <View
+            android:layout_width="35dp"
+            android:layout_height=".5dp"
+            android:background="@color/record_divided" />
+
+        <View
+            android:layout_width=".5dp"
+            android:layout_height=".5dp"
+            android:background="@color/kb_yellow" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height=".5dp"
+            android:background="@color/record_divided" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/time_bar_linear"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/record_bar_bg"
+        android:orientation="horizontal" >
+
+        <include
+            android:layout_width="31dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="20dp"
+            layout="@layout/record_image_big" />
+
+        <TextView
+            android:id="@+id/time_bar_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:text="@string/letter_time"
+            android:textSize="@dimen/tips_size"
+            android:textColor="@color/kb_yellow" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height=".5dp" >
+
+        <View
+            android:id="@+id/divided_left_line"
+            android:layout_width="35dp"
+            android:layout_height=".5dp"
+            android:background="@color/record_divided" />
+
+        <View
+            android:layout_width=".5dp"
+            android:layout_height=".5dp"
+            android:background="@color/kb_yellow" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height=".5dp"
+            android:background="@color/record_divided" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white"
+        android:orientation="horizontal" >
+
+        <include
+            android:layout_width="31dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="20dp"
+            layout="@layout/record_image_small" />
+
+        <TextView
+            android:id="@+id/record_tv"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:paddingBottom="15dp"
+            android:paddingTop="15dp"
+            android:text="@string/letter_title"
+            android:textColor="@android:color/black" />
+    </LinearLayout>
+
+</LinearLayout>

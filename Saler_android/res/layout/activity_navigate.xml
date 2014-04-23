@@ -1,0 +1,138 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:orientation="vertical" >
+
+    <include layout="@layout/layout_title_bar" />
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/notify_pager"
+        android:layout_width="match_parent"
+        android:layout_height="150dp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height=".5dp"
+        android:background="@color/record_divided" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:id="@+id/news_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:drawableTop="@drawable/news_icon"
+            android:gravity="center"
+            android:paddingTop="20dp"
+            android:text="@string/nav_news_btn"
+            android:textColor="@color/black"
+            android:textSize="@dimen/title_font_size" />
+
+        <View
+            android:layout_width=".5dp"
+            android:layout_height="match_parent"
+            android:background="@color/record_divided" />
+
+        <TextView
+            android:id="@+id/communicate_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:drawableTop="@drawable/commun_icon"
+            android:gravity="center"
+            android:paddingTop="20dp"
+            android:text="@string/nav_communicate_btn"
+            android:textColor="@color/black"
+            android:textSize="@dimen/title_font_size" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height=".5dp"
+        android:background="@color/record_divided" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:id="@+id/shop_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:drawableTop="@drawable/shopdata_icon"
+            android:gravity="center"
+            android:paddingTop="20dp"
+            android:text="@string/nav_shop_btn"
+            android:textColor="@color/black"
+            android:textSize="@dimen/title_font_size" />
+
+        <View
+            android:layout_width=".5dp"
+            android:layout_height="match_parent"
+            android:background="@color/record_divided" />
+
+        <TextView
+            android:id="@+id/alarm_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:drawableTop="@drawable/alarm_icon"
+            android:gravity="center"
+            android:paddingTop="20dp"
+            android:text="@string/nav_alarm_btn"
+            android:textColor="@color/black"
+            android:textSize="@dimen/title_font_size" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height=".5dp"
+        android:background="@color/record_divided" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:id="@+id/growup_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:drawableTop="@drawable/grown_icon"
+            android:gravity="center"
+            android:paddingTop="20dp"
+            android:text="@string/nav_growup_btn"
+            android:textColor="@color/black"
+            android:textSize="@dimen/title_font_size" />
+
+        <View
+            android:layout_width=".5dp"
+            android:layout_height="match_parent"
+            android:background="@color/record_divided" />
+
+        <TextView
+            android:id="@+id/software_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:drawableTop="@drawable/software_icon"
+            android:gravity="center"
+            android:paddingTop="20dp"
+            android:text="@string/nav_software_btn"
+            android:textColor="@color/black"
+            android:textSize="@dimen/title_font_size" />
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,167 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+            <title>Highcharts Demo - jsFiddle demo</title>
+            
+            <script type='text/javascript' src='js/jquery.js'></script>
+            <script src="js/highcharts.js"></script>
+                
+                <link rel="stylesheet" type="text/css" href="/css/result-light.css">
+                
+                <style type='text/css'>
+                
+                </style>
+                
+                
+                
+                <script type='text/javascript'>//<![CDATA[
+				
+            
+			
+                function updateData(x,mwidth,mheight,mbuttonWidth,mfontsize)
+                {
+					var arr = eval('('+x+')');
+					hityou(arr[0],arr[1],arr[2],arr[3],arr[4],mwidth,mheight,mbuttonWidth,mfontsize);
+					$("#container").css("height",mheight).css("width",mwidth);
+                }
+                function hityou(data1,data2,riqi1,tongqi_riqi,name,mwidth,mheight,mbuttonWidth,mfontsize){
+                    $('#container').highcharts({
+                
+                chart: {
+                marginBottom: 15,
+                marginLeft: 60,
+                marginTop:20,
+                width: mwidth,
+                height:mheight,
+                type:"spline"
+                },
+                //配置标题
+                title: {
+                text: name,
+                style:{
+                fontSize:mfontsize
+                },
+                y:5 //默认对齐是顶部，所以这里代表距离顶部10px
+                },
+                //配置x轴
+                xAxis: {
+                categories: riqi1,
+                labels:{
+                    style:{
+                    fontSize:mfontsize
+                    }
+                }
+                
+                },
+                tooltip: {
+                useHTML: true,
+                headerFormat: '<div style="font-size:14px;">{point.key}<br/>',
+                pointFormat:'{series.name}:{point.y}</div>'
+                },
+                credits:{
+                    enabled: false
+                },
+               yAxis: {
+               title: {
+               text: ''
+               },
+               labels:{
+               style:{
+               fontSize:mfontsize
+               }
+               }
+               },
+            
+               //修改按钮大小
+               legend: {
+                  // enabled:false,
+               //borderRadius: 20,
+               width:mbuttonWidth,
+               itemStyle: {
+                   
+                    fontSize: mfontsize,
+                    align:"center"
+               },
+               itemDistance: 30,
+                align: "left",
+                x: mwidth,
+                verticalAlign: "Bottom",
+                y:mheight,floating: true,backgroundColor: "#FFFFFF"
+               },
+                plotOptions: {
+                    series: {
+                        lineWidth: 3
+                    }
+                },
+                series: [
+                         {
+                         data: [{
+                                name:riqi1[0],
+                                y:data1[0]
+                                },{
+                                name:riqi1[1],
+                                y:data1[1]
+                                },{
+                                name:riqi1[2],
+                                y:data1[2]
+                                },{
+                                name:riqi1[3],
+                                y:data1[3]
+                                },{
+                                
+name:riqi1[4],
+                                y:data1[4]
+                                },{
+                                name:riqi1[5],
+                                y:data1[5]
+                                },{
+                                name:riqi1[6],
+                                y:data1[6]
+                                }],
+                name: '近七天'
+                
+                },{
+                         data: [{
+                                name:tongqi_riqi[0],
+                                y:data2[0]
+                                },{
+                                name:tongqi_riqi[1],
+                                y:data2[1]
+                                },{
+                                name:tongqi_riqi[2],
+                                y:data2[2]
+                                },{
+                                name:tongqi_riqi[3],
+                                y:data2[3]
+                                },{
+                                name:tongqi_riqi[4],
+                                y:data2[4]
+                                },{
+                                name:tongqi_riqi[5],
+                                y:data2[5]
+                                },{
+                                name:tongqi_riqi[6],
+                                y:data2[6]
+                                }],
+                name: '上周同期'
+                
+                }]
+                });
+                }
+                //]]>  
+                
+                </script>
+                
+                
+                </head>
+                <body>
+                
+                <div id="container" style="width:500px;min-height:125px;"></div>
+                
+                </body>
+                
+                
+                </html>
+                

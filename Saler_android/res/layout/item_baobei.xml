@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp" >
+
+        <ImageView
+            android:id="@+id/imageView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/action_settings"
+            android:src="@drawable/gift" />
+
+        <RelativeLayout
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginLeft="1dp"
+            android:background="@drawable/bule" >
+
+            <TextView
+                android:id="@+id/baobei_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:maxLines="2"
+                android:maxWidth="140dp"
+                android:text="@string/baobei_title"
+                android:textColor="@color/normal_white" />
+
+            <TextView
+                android:id="@+id/baobei_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="10dp"
+                android:text="@string/demo_price"
+                android:textColor="@color/normal_white"
+                android:textSize="@dimen/tips_size" />
+        </RelativeLayout>
+    
+    </LinearLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/threeline" >
+
+        <ImageView
+            android:id="@+id/baobei_pic"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:contentDescription="@string/action_settings"
+            android:src="@drawable/nobb" />
+
+        <TextView
+            android:id="@+id/baobei_sku_msg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_toRightOf="@+id/baobei_pic"
+            android:text="@string/baobei_sku"
+            android:textColor="@color/select_bule" />
+
+        <TextView
+            android:id="@+id/baobei_sku"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/baobei_sku_msg"
+            android:layout_marginLeft="5dp"
+            android:layout_toRightOf="@+id/baobei_sku_msg"
+            android:text="@string/dome_num"
+            android:textColor="@color/select_bule" />
+
+        <TextView
+            android:id="@+id/baobei_pv_msg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/baobei_sku_msg"
+            android:layout_below="@+id/baobei_sku_msg"
+            android:layout_marginTop="10dp"
+            android:text="@string/baobei_pv"
+            android:textColor="@color/select_bule" />
+
+        <TextView
+            android:id="@+id/baobei_pv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/baobei_pv_msg"
+            android:layout_marginLeft="5dp"
+            android:layout_toRightOf="@+id/baobei_pv_msg"
+            android:text="@string/dome_num"
+            android:textColor="@color/select_bule" />
+
+        <TextView
+            android:id="@+id/baobei_fov_msg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/baobei_pv_msg"
+            android:layout_below="@+id/baobei_pv_msg"
+            android:layout_toLeftOf="@+id/baobei_fov"
+            android:layout_marginRight="5dp"
+            android:text="@string/baobei_fov"
+            android:textColor="@color/select_bule" />
+
+        <TextView
+            android:id="@+id/baobei_fov"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/baobei_fov_msg"
+            android:layout_marginRight="10dp"
+            android:layout_alignParentRight="true"
+            android:text="@string/dome_num"
+            android:textColor="@color/select_bule" />
+
+        <TextView
+            android:id="@+id/baobei_uv_msg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/baobei_pv_msg"
+            android:layout_below="@+id/baobei_pv_msg"
+            android:layout_marginTop="10dp"
+            android:text="@string/baobei_uv"
+            android:textColor="@color/select_bule" />
+
+        <TextView
+            android:id="@+id/baobei_uv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/baobei_uv_msg"
+            android:layout_marginLeft="5dp"
+            android:layout_toRightOf="@+id/baobei_uv_msg"
+            android:text="@string/dome_num"
+            android:textColor="@color/select_bule"  />
+        
+        <TextView
+            android:id="@+id/baobei_sales_msg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/baobei_uv_msg"
+            android:layout_below="@+id/baobei_uv_msg"
+            android:layout_toLeftOf="@+id/baobei_sales"
+            android:layout_marginRight="5dp"
+            android:text="@string/baobei_sales"
+            android:textColor="@color/select_bule" />
+
+        <TextView
+            android:id="@+id/baobei_sales"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/baobei_sales_msg"
+            android:layout_marginRight="10dp"
+            android:layout_alignParentRight="true"
+            android:text="@string/dome_num"
+            android:textColor="@color/select_bule" />
+    </RelativeLayout>
+
+</LinearLayout>

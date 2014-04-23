@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical" >
+    
+    <RelativeLayout
+        android:id="@+id/date_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp" >
+
+        <ImageView
+            android:id="@+id/imageView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@+id/start_date"
+            android:layout_marginRight="5dp"
+            android:contentDescription="@string/action_settings"
+            android:src="@drawable/date" />
+
+        <TextView
+            android:id="@+id/start_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="@string/choice_date"
+            android:textColor="@android:color/black"
+            android:textSize="20sp"/>
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/start_date"
+            android:layout_marginLeft="5dp"
+            android:contentDescription="@string/action_settings"
+            android:src="@drawable/date2" />
+    </RelativeLayout>
+    
+    <TableLayout
+        android:id="@+id/daily_sign"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp" >
+
+        <TableRow
+            android:id="@+id/tableRow1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bottom_line" >
+            
+            <LinearLayout
+                android:layout_weight="1"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:orientation="horizontal" >
+                <TextView
+	                android:id="@+id/trade_baobeis_msg"
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                android:text="@string/trade_baobeis"
+	                android:textColor="@color/select_bule"/>
+                <TextView
+	                android:id="@+id/trade_baobeis"
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                android:text="@string/dome_num"
+	                android:textSize="@dimen/point_size"
+	                android:textColor="@color/select_bule"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_weight="1"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:orientation="horizontal" >
+                <TextView
+	                android:id="@+id/trade_nums_msg"
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                android:text="@string/trade_nums"
+	                android:textColor="@color/select_bule"/>
+                <TextView
+	                android:id="@+id/trade_nums"
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                android:text="@string/dome_num"
+	                android:textSize="22sp"
+	                android:textColor="@color/select_bule"/>
+            </LinearLayout>
+    
+        </TableRow>
+        
+        <TableRow
+            android:id="@+id/tableRow2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bottom_line" >
+            <LinearLayout
+                android:layout_weight="1"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:orientation="horizontal" >
+                <TextView
+	                android:id="@+id/item_fovs_msg"
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                android:text="@string/item_fovs"
+	                android:textColor="@color/select_bule" />
+                <TextView
+	                android:id="@+id/item_fovs"
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                android:text="@string/dome_num"
+	                android:textSize="22sp"
+	                android:textColor="@color/select_bule" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_weight="1"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:orientation="horizontal" >
+                <TextView
+	                android:id="@+id/no_trade_nums_msg"
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                android:text="@string/no_trade_nums" 
+	                android:textColor="@color/select_bule" />
+                <TextView
+	                android:id="@+id/no_trade_nums"
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                android:text="@string/dome_num"
+	                android:textSize="22sp"
+	                android:textColor="@color/select_bule" />
+            </LinearLayout>
+            
+        </TableRow>
+	</TableLayout>
+
+    <com.koolbao.saler.widge.XListView
+        android:id="@+id/baobei_lv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="5dp"
+        android:paddingTop="10dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:listSelector="#00000000" />
+
+</LinearLayout>

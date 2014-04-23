@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_version">1.2</string>
+    <string name="app_name">我是卖家</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="back">返回</string>
+    <string name="share">分享</string>
+    <string name="xlistview_header_hint_normal">下拉刷新</string>
+    <string name="xlistview_header_hint_ready">松开刷新数据</string>
+    <string name="xlistview_header_hint_loading">正在加载...</string>
+    <string name="xlistview_header_last_time">上次更新时间：</string>
+    <string name="xlistview_footer_hint_normal">查看更多</string>
+    <string name="xlistview_footer_hint_ready">松开载入更多</string>
+
+    <!-- Navigate -->
+    <string name="nav_title">我是卖家</string>
+    <string name="nav_user_btn">用户</string>
+    <string name="nav_news_btn">资讯速递</string>
+    <string name="nav_communicate_btn">卖家交流</string>
+    <string name="nav_shop_btn">店铺诊断</string>
+    <string name="nav_alarm_btn">每日提醒</string>
+    <string name="nav_growup_btn">成长记录</string>
+    <string name="nav_software_btn">软件推荐</string>
+
+    <!-- Login -->
+    <string name="login_title">用户登录</string>
+    <string name="phone_hint">请输入手机号码</string>
+    <string name="psd_hint">请输入密码</string>
+    <string name="submit_text">登录</string>
+    <string name="action_regist_text">新用户注册</string>
+    <string name="action_forget_text">忘记密码</string>
+    
+    <!-- ForgetPsd -->
+	<string name="forget_title">找回密码</string>
+	<string name="step_1">第一步</string>
+	<string name="step_2">第二步</string>
+	<string name="step_3">第三步</string>
+	<string name="setting_psd_hint">设置密码</string>
+	<string name="check_btn">验明正身</string>
+	<string name="modify_psd">修改密码</string>
+	
+    <!-- Regist -->
+    <string name="regist_title">用户注册</string>
+    <string name="regist_text">注册</string>
+    <string name="check_text">获取验证码</string>
+    <string name="check_hint">验证码</string>
+
+    <!-- User -->
+    <string name="user_title">用户中心</string>
+    <string name="phone_left_text">手机号 : </string>
+    <string name="phone_demo_text">183XXX1140</string>
+    <string name="user_nick_left_text">昵称</string>
+    <string name="user_nick_demo_text">Jackd</string>
+    <string name="user_post_left_text">我的帖子</string>
+    <string name="user_postmsg_demo_text">1个回复</string>
+    <string name="user_shop_left_text">绑定店铺</string>
+    <string name="user_shop_demo_text">尚未绑定</string>
+    <string name="call_us_txt">客服电话：</string>
+    <string name="kb_card_text">( +86 ) 0571-87853991</string>
+    <string name="about_us_text">关于我是卖家</string>
+    <string name="canel_login_btn">注销登录</string>
+    
+    <!-- AboutUs -->
+    <string name="version_txt">版本号  :   v</string>
+	<string name="update_txt">立即升级</string>
+	
+    <!-- UserPost -->
+    <string name="user_post_title">我的帖子</string>
+    <string name="my_post_tab">发表的帖子</string>
+    <string name="reply_tab">回复的帖子</string>
+    <string name="favor_tab">收藏的资讯</string>
+
+    <!-- NickModify -->
+    <string name="nick_modify_title">修改昵称</string>
+    <string name="nick_hint">输入昵称</string>
+
+    <!-- News -->
+    <string name="news_title">资讯速递</string>
+    <string name="letter_time">2014-03-05</string>
+    <string name="letter_title">酷宝公告</string>
+    <string name="time_bar">2014-03</string>
+
+    <!-- NewsContent -->
+    <string name="newscontent_title">资讯详情</string>
+    <string name="goods">赞</string>
+    <string name="lower">low</string>
+    <string name="count_demo">888</string>
+    <string name="share_to_weixin">分享到微信</string>
+    <string name="share_to_weibo">分享到新浪微博</string>
+    <string name="save_to_favor">收藏</string>
+    <string name="cancel">取消</string>
+
+    <!-- Communicate -->
+    <string name="communicate_title">卖家交流</string>
+    <string name="fresh_tab">新手开店</string>
+    <string name="activity_tab">活动介绍</string>
+    <string name="question_tab">有求必答</string>
+    <string name="search_hint">请输入搜索关键词</string>
+    <string name="search_txt_btn">搜索</string>
+
+    <!-- BBSContent -->
+    <string name="bbs_content_title">帖子详情</string>
+    <string name="bbs_reply_tt">回复于</string>
+    <string name="bbs_reply_txt">回复内容</string>
+
+    <!-- BBSForm -->
+    <string name="bbs_form_title">发表帖子</string>
+    <string name="bbs_type">请选择帖子分类</string>
+    <string name="bbs_title">请输入标题</string>
+    <string name="bbs_hint">发表您的观点</string>
+    <string name="anonymous_txt">匿名</string>
+
+    <!-- Shop -->
+    <string name="shop_title">店铺诊断</string>
+    <string name="diagnose_tab">店铺诊断</string>
+    <string name="shopdata_tab">店铺数据</string>
+    <string name="shopbaobei_tab">店铺宝贝</string>
+    <string name="dome_num">--</string>
+    <string name="choice_date">2013-11-13</string>
+    <string name="yester">过去7天数据</string>
+    <string name="user_nick">酷宝数据</string>
+    <string name="tongqi">上周同期数据</string>
+    <string name="loading_msg">光速加载中...</string>
+    <string name="trade_baobeis">成交宝贝数：</string>
+    <string name="trade_nums">宝贝销量：</string>
+    <string name="item_fovs">宝贝收藏数：</string>
+    <string name="no_trade_nums">未成交宝贝数：</string>
+    <string name="baobei_title">这是一个很长很长很长很长的宝贝标题</string>
+    <string name="order_num">2件</string>
+    <string name="baobei_sku">SKU：</string>
+    <string name="baobei_pv">PU：</string>
+    <string name="baobei_uv">VU：</string>
+    <string name="baobei_fov">收藏数：</string>
+    <string name="baobei_sales">销量：</string>
+    <string name="demo_price">￥: --.-</string>
+    <string name="datechoice">日期</string>
+    <string name="sure">确定</string>
+    <string name="demo_score">00</string>
+    <string name="health_label">健康</string>
+
+    <!-- Alarm -->
+    <string name="alarm_title">每日提醒</string>
+
+    <!-- Growup -->
+    <string name="growup_title">成长记录</string>
+    <string name="add_record">添加</string>
+    <string name="record_hint">说的什么吧！</string>
+    <string name="char_warn">还可输入140字</string>
+    <string name="record_submit">完成</string>
+    
+    <!-- RecordForm -->
+    <string name="record_form_title">添加记录</string>
+
+    <!-- Software -->
+    <string name="software_title">软件推荐</string>
+    <string name="title_activity_news_content">NewsContentActivity</string>
+    <string name="title_activity_record_form">RecordFormActivity</string>
+    <string name="title_activity_authorize">AuthorizeActivity</string>
+
+    <!-- Authorize -->
+    <string name="authorize_title">绑定店铺</string>
+    <string name="authorize_msg_1">您未授权 "我是卖家"</string>
+    <string name="authorize_msg_2">请根据下面的提示扫描二维码</string>
+    <string name="scan_authorize">扫描授权</string>
+    <string name="authorize_step_1">1.打开PC版 "我是卖家"</string>
+    <string name="authorize_step_2">2.点击左导航--授权无线端</string>
+    <string name="authorize_step_3">3.扫描里面的二维码</string>
+    <string name="scan_title">扫描二维码绑定</string>
+    <string name="title_activity_nick_modify">NickModifyActivity</string>
+    <string name="title_activity_bbsform">BBSFormActivity</string>
+    <string name="title_activity_bbscontent">BBSContentActivity</string>
+    <string name="title_activity_user_post">UserPostActivity</string>
+    <string name="title_activity_forget_psd">ForgetPsdActivity</string>
+
+</resources>
