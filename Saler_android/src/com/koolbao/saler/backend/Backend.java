@@ -1,13 +1,17 @@
 package com.koolbao.saler.backend;
 
 import com.koolbao.saler.model.back.BannerBack;
+import com.koolbao.saler.model.back.FeedBack;
 import com.koolbao.saler.model.back.LetterBack;
 import com.koolbao.saler.utils.HttpTaskUtils;
 
 import retrofit.Callback;
 import retrofit.RestAdapter;
 import retrofit.RestAdapter.LogLevel;
+import retrofit.http.Field;
+import retrofit.http.FormUrlEncoded;
 import retrofit.http.GET;
+import retrofit.http.POST;
 import retrofit.http.Path;
 
 public class Backend {
@@ -40,6 +44,10 @@ public class Backend {
 		serverInstance.getBannerList(callback);
 	}
 	
+	public void postFeedBack(String user_id, String content, String phone_version, Callback<FeedBack> callback) {
+		serverInstance.postFeedBack(user_id, content, phone_version, callback);
+	}
+	
 	interface Server {
 		@GET("/app/ajax_blog/get_list/{page}")
 		void getLetters(@Path("page") int page, Callback<LetterBack> callback);
@@ -49,5 +57,9 @@ public class Backend {
 		
 		@GET("/banner_app/show_banners")
 		void getBannerList(Callback<BannerBack> callback);
+		
+		@FormUrlEncoded
+		@POST("/app/feedback/add_feedback")
+		void postFeedBack(@Field("user_id") String user_id, @Field("content") String content, @Field("phone_version") String phone_version, Callback<FeedBack> callback);
 	}
 }

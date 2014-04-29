@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical" >
+
+    <include layout="@layout/layout_title_bar" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="280dp"
+        android:layout_marginBottom="5dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp" >
+
+        <com.koolbao.saler.widge.RecordEditText
+            android:id="@+id/feed_txt_tv"
+            android:layout_width="match_parent"
+            android:layout_height="280dp"
+            android:ems="10"
+            android:gravity="start"
+            android:hint="@string/feed_hint"
+            android:inputType="textMultiLine" />
+
+        <TextView
+            android:id="@+id/char_warn_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/feed_txt_tv"
+            android:layout_alignRight="@+id/feed_txt_tv"
+            android:layout_marginBottom="10dp"
+            android:layout_marginRight="10dp"
+            android:text="@string/char_warn"
+            android:textColor="@android:color/black" />
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/submit_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/send_btn" />
+
+</LinearLayout>

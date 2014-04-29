@@ -1,5 +1,6 @@
 package com.koolbao.saler;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -21,6 +22,9 @@ import android.support.v4.view.ViewPager;
 import android.support.v4.view.ViewPager.OnPageChangeListener;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.LinearLayout.LayoutParams;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -44,6 +48,9 @@ public class NavigateActivity extends BaseActivity implements OnClickListener {
 	private TextView alarm_btn;
 	private TextView growup_btn;
 	private TextView software_btn;
+	
+	private ImageView[] imageViews;
+	private LinearLayout viewPoints;
 
 	// 图片轮播
 	private NotifyAdapter notifyAdapter;
@@ -103,6 +110,31 @@ public class NavigateActivity extends BaseActivity implements OnClickListener {
 
 	private void initPager() {
 		List<Banner> banner_list = new Select().from(Banner.class).execute();
+		if (banner_list == null) {
+			banner_list = new ArrayList<Banner>();
+		}
+		imageViews = new ImageView[banner_list.size()];
+		viewPoints = (LinearLayout) findViewById(R.id.viewGroup);
+		viewPoints.removeAllViews();
+		
+		for (int i = 0; i < banner_list.size(); i++) {
+			ImageView imageView = new ImageView(this); 
+			LayoutParams layout = new LayoutParams(14, 14);
+			layout.leftMargin = 15;
+			layout.rightMargin = 15;
+			// 设置小圆点imageview的参数
+			imageView.setLayoutParams(layout);
+			// 将小圆点layout添加到数组中
+			imageViews[i] = imageView;
+			// 默认选中的是第一张图片，此时第一个小圆点是选中状态，其他不是
+			if (i == 0) {
+				imageViews[i].setBackgroundResource(R.drawable.selected_point);
+			} else {
+				imageViews[i].setBackgroundResource(R.drawable.unselected_point);
+			}
+			// 将imageviews添加到小圆点视图组
+			viewPoints.addView(imageViews[i]);
+		}
 		
 		notifyAdapter = new NotifyAdapter(NavigateActivity.this, banner_list);
 		notify_pager.setAdapter(notifyAdapter);
@@ -112,6 +144,12 @@ public class NavigateActivity extends BaseActivity implements OnClickListener {
 			@Override
 			public void onPageSelected(int position) {
 				currentItem = position;
+				for (int i = 0; i < imageViews.length ; i++) {
+					imageViews[i].setBackgroundResource(R.drawable.unselected_point);
+					if (position == i) {
+						imageViews[i].setBackgroundResource(R.drawable.selected_point);
+					}
+				}
 			}
 
 			@Override

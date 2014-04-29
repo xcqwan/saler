@@ -46,6 +46,7 @@ public class UserActivity extends BaseActivity implements OnClickListener {
 	private TextView user_shop_tv;
 	
 	private TextView about_us_tv;
+	private TextView feed_back_tv;
 	private Button cancel_login_btn;
 	
 	private Bitmap myBitmap;
@@ -95,6 +96,7 @@ public class UserActivity extends BaseActivity implements OnClickListener {
 		user_post_tv.setOnClickListener(this);
 		user_img.setOnClickListener(this);
 		about_us_tv.setOnClickListener(this);
+		feed_back_tv.setOnClickListener(this);
 	}
 
 	private void initCustom() {
@@ -106,6 +108,7 @@ public class UserActivity extends BaseActivity implements OnClickListener {
 		user_post_tv = (TextView) findViewById(R.id.user_post_tv);
 		user_shop_tv = (TextView) findViewById(R.id.user_shop_tv);
 		about_us_tv = (TextView) findViewById(R.id.about_us_tv);
+		feed_back_tv = (TextView) findViewById(R.id.feed_back_tv);
 		cancel_login_btn = (Button) findViewById(R.id.cancel_login_btn);
 		
 		sharePrefer = getSharedPreferences(UserInfoUtils.FileName, MODE_PRIVATE);
@@ -179,6 +182,12 @@ public class UserActivity extends BaseActivity implements OnClickListener {
 		//关于我是卖家
 		if (v.getId() == about_us_tv.getId()) {
 			Intent intent = new Intent(this, AboutUsActivity.class);
+			startActivity(intent);
+			overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+		}
+		//问题反馈
+		if (v.getId() == feed_back_tv.getId()) {
+			Intent intent = new Intent(this, FeedbackActivity.class);
 			startActivity(intent);
 			overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
 		}
