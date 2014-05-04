@@ -32,16 +32,19 @@ import com.koolbao.saler.widge.XListView.IXListViewListener;
 import com.squareup.otto.Subscribe;
 
 import android.os.Bundle;
+import android.support.v4.widget.SwipeRefreshLayout;
+import android.support.v4.widget.SwipeRefreshLayout.OnRefreshListener;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.content.Intent;
 import android.content.SharedPreferences;
 
-public class NewsActivity extends BaseActivity implements IXListViewListener, OnItemClickListener {
+public class NewsActivity extends BaseActivity implements IXListViewListener, OnItemClickListener, OnRefreshListener {
 	public final int LOAD_STATUS = 1;
 	public final int REFRESH_STATUS = 0;
 	private XListView news_lv;
+	private SwipeRefreshLayout swipe_srl;
 
 	private NewsLetterAdapter newsAdapter;
 	private String lastRefreshTime = "刚刚";
@@ -88,6 +91,7 @@ public class NewsActivity extends BaseActivity implements IXListViewListener, On
 	private void initListener() {
 		news_lv.setXListViewListener(this);
 		news_lv.setOnItemClickListener(this);
+		swipe_srl.setOnRefreshListener(this);
 	}
 
 	private void initXList() {
@@ -218,9 +222,11 @@ public class NewsActivity extends BaseActivity implements IXListViewListener, On
 	}
 
 	private void initCustom() {
+		swipe_srl = (SwipeRefreshLayout) findViewById(R.id.swipe_srl);
+		swipe_srl.setColorScheme(R.color.blue_light, R.color.green_light, R.color.orange_light, R.color.red_light);
 		news_lv = (XListView) findViewById(R.id.news_lv);
 		news_lv.setPullLoadEnable(false);
-		news_lv.setPullRefreshEnable(true);
+		news_lv.setPullRefreshEnable(false);
 		news_lv.setOverScrollMode(View.OVER_SCROLL_NEVER);
 		
 		sharePrefer = getSharedPreferences(UserInfoUtils.FileName, MODE_PRIVATE);
@@ -228,6 +234,7 @@ public class NewsActivity extends BaseActivity implements IXListViewListener, On
 	}
 	
 	private void onLoad() {
+		swipe_srl.setRefreshing(false);
 		news_lv.stopRefresh();
 		news_lv.stopLoadMore();
 		news_lv.setRefreshTime(lastRefreshTime);

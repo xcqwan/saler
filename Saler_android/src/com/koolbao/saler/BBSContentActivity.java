@@ -18,6 +18,8 @@ import com.koolbao.saler.widge.XListView.IXListViewListener;
 
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.text.Html;
+import android.text.method.LinkMovementMethod;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -90,7 +92,8 @@ public class BBSContentActivity extends BaseActivity implements OnClickListener,
 		
 		bbs_time_tv.setText(created.substring(5, 16).replaceAll("-", "/"));
 		bbs_title_tv.setText(title);
-		bbs_content_tv.setText(content);
+		bbs_content_tv.setText(Html.fromHtml(content));
+		bbs_content_tv.setMovementMethod(LinkMovementMethod.getInstance());
 		bbs_author_tv.setText(user_nick);
 		bbs_views_tv.setText(views);
 		bbs_reply_tv.setText(comments);

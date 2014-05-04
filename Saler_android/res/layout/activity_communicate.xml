@@ -34,14 +34,20 @@
         android:layout_height="0dp"
         android:layout_weight="1" >
 
-        <com.koolbao.saler.widge.XListView
-            android:id="@+id/post_lv"
+        <android.support.v4.widget.SwipeRefreshLayout
+            android:id="@+id/swipe_srl"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:cacheColorHint="#00000000"
-            android:divider="@null"
-            android:listSelector="#F6F6F6" >
-        </com.koolbao.saler.widge.XListView>
+            android:layout_height="match_parent" >
+
+            <com.koolbao.saler.widge.XListView
+                android:id="@+id/post_lv"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:cacheColorHint="#00000000"
+                android:divider="@null"
+                android:listSelector="#F6F6F6" >
+            </com.koolbao.saler.widge.XListView>
+        </android.support.v4.widget.SwipeRefreshLayout>
 
         <RelativeLayout
             android:id="@+id/loading_rl"

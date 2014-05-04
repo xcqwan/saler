@@ -17,6 +17,8 @@ import com.koolbao.saler.widge.XListView;
 import com.koolbao.saler.widge.XListView.IXListViewListener;
 
 import android.os.Bundle;
+import android.support.v4.widget.SwipeRefreshLayout;
+import android.support.v4.widget.SwipeRefreshLayout.OnRefreshListener;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -27,7 +29,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.PopupWindow.OnDismissListener;
 
-public class BaoBeiPageFragment extends BaseFragment implements IXListViewListener {
+public class BaoBeiPageFragment extends BaseFragment implements IXListViewListener, OnRefreshListener {
 	//页面布局
 	private View view;
 	private RelativeLayout date_content;
@@ -38,6 +40,7 @@ public class BaoBeiPageFragment extends BaseFragment implements IXListViewListen
 	private TextView item_fovs;
 	private TextView no_trade_nums;
 	private XListView baobei_lv;
+	private SwipeRefreshLayout swipe_srl;
 	
 	private String before_change;
 	int page_count;
@@ -176,6 +179,7 @@ public class BaoBeiPageFragment extends BaseFragment implements IXListViewListen
 		});
 		
 		baobei_lv.setXListViewListener(this);
+		swipe_srl.setOnRefreshListener(this);
 	}
 
 
@@ -190,6 +194,9 @@ public class BaoBeiPageFragment extends BaseFragment implements IXListViewListen
 		baobei_lv = (XListView) view.findViewById(R.id.baobei_lv);
 		baobei_lv.setDivider(null);
 		baobei_lv.setOverScrollMode(View.OVER_SCROLL_NEVER);
+		
+		swipe_srl = (SwipeRefreshLayout) view.findViewById(R.id.swipe_srl);
+		swipe_srl.setColorScheme(R.color.blue_light, R.color.green_light, R.color.orange_light, R.color.red_light);
 		
 		trade_baobeis = (TextView) view.findViewById(R.id.trade_baobeis);
 		trade_nums = (TextView) view.findViewById(R.id.trade_nums);
@@ -243,6 +250,7 @@ public class BaoBeiPageFragment extends BaseFragment implements IXListViewListen
 	}
 	
 	private void onLoad() {
+		swipe_srl.setRefreshing(false);
 		baobei_lv.stopLoadMore();
 		baobei_lv.stopRefresh();
 		baobei_lv.setRefreshTime(lastRefreshTime);

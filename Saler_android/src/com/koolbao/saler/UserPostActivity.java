@@ -18,6 +18,8 @@ import com.koolbao.saler.widge.XListView.IXListViewListener;
 
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.support.v4.widget.SwipeRefreshLayout;
+import android.support.v4.widget.SwipeRefreshLayout.OnRefreshListener;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.AdapterView;
@@ -32,7 +34,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 
-public class UserPostActivity extends BaseActivity implements OnClickListener, IXListViewListener, OnItemClickListener, OnItemLongClickListener {
+public class UserPostActivity extends BaseActivity implements OnClickListener, IXListViewListener, OnItemClickListener, OnItemLongClickListener, OnRefreshListener {
 	public final int MY_POST_TAB = 1;
 	public final int REPLY_TAB = 2;
 	public final int FAVOR_TAB = 3;
@@ -43,6 +45,7 @@ public class UserPostActivity extends BaseActivity implements OnClickListener, I
 	private Button favor_btn;
 	private XListView post_lv;
 	private RelativeLayout loading_rl;
+	private SwipeRefreshLayout swipe_srl;
 	
 	private NewsLetterAdapter newsAdapter;
 	private PostAdapter postAdapter;
@@ -74,6 +77,7 @@ public class UserPostActivity extends BaseActivity implements OnClickListener, I
 		post_lv.setXListViewListener(this);
 		post_lv.setOnItemClickListener(this);
 		post_lv.setOnItemLongClickListener(this);
+		swipe_srl.setOnRefreshListener(this);
 	}
 
 	private void initCustom() {
@@ -82,9 +86,11 @@ public class UserPostActivity extends BaseActivity implements OnClickListener, I
 		favor_btn = (Button) findViewById(R.id.favor_btn);
 		loading_rl = (RelativeLayout) findViewById(R.id.loading_rl);
 		
+		swipe_srl = (SwipeRefreshLayout) findViewById(R.id.swipe_srl);
+		swipe_srl.setColorScheme(R.color.blue_light, R.color.green_light, R.color.orange_light, R.color.red_light);
 		post_lv = (XListView) findViewById(R.id.post_lv);
 		post_lv.setPullLoadEnable(false);
-		post_lv.setPullRefreshEnable(true);
+		post_lv.setPullRefreshEnable(false);
 		post_lv.setOverScrollMode(View.OVER_SCROLL_NEVER);
 		
 		sharePrefer = getSharedPreferences(UserInfoUtils.FileName, MODE_PRIVATE);
@@ -206,6 +212,7 @@ public class UserPostActivity extends BaseActivity implements OnClickListener, I
 	}
 	
 	private void onLoad() {
+		swipe_srl.setRefreshing(false);
 		post_lv.stopRefresh();
 		post_lv.stopLoadMore();
 		post_lv.setRefreshTime(lastRefreshTime);

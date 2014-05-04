@@ -48,4 +48,8 @@
 	<color name="like_txt">#EAEAEA</color>
 	<color name="actionsheet_bg">#F6F6F6</color>
 	<color name="diagnose_score">#FF9600</color>
+	<color name="blue_light">#ff33b5e5</color>
+	<color name="green_light">#ff99cc00</color>
+	<color name="orange_light">#ffffbb33</color>
+	<color name="red_light">#ffff4444</color>
 </resources>

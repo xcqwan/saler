@@ -17,6 +17,8 @@ import com.koolbao.saler.widge.XListView.IXListViewListener;
 
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.support.v4.widget.SwipeRefreshLayout;
+import android.support.v4.widget.SwipeRefreshLayout.OnRefreshListener;
 import android.view.View;
 import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
@@ -24,12 +26,13 @@ import android.widget.Toast;
 import android.content.Intent;
 import android.content.SharedPreferences;
 
-public class GrowupActivity extends BaseActivity implements IXListViewListener {
+public class GrowupActivity extends BaseActivity implements IXListViewListener, OnRefreshListener {
 	public final int LOAD_STATUS = 1;
 	public final int REFRESH_STATUS = 0;
 	public final int REQUEST_FORM = 0;
 	private XListView record_lv;
 	private RelativeLayout loading_rl;
+	private SwipeRefreshLayout swipe_srl;
 	
 	private RecordAdapter recordAdapter;
 	private String lastRefreshTime = "刚刚";
@@ -66,6 +69,7 @@ public class GrowupActivity extends BaseActivity implements IXListViewListener {
 	}
 	
 	private void onLoad() {
+		swipe_srl.setRefreshing(false);
 		record_lv.stopRefresh();
 		record_lv.stopLoadMore();
 		record_lv.setRefreshTime(lastRefreshTime);
@@ -106,14 +110,17 @@ public class GrowupActivity extends BaseActivity implements IXListViewListener {
 
 	private void initListener() {
 		record_lv.setXListViewListener(this);
+		swipe_srl.setOnRefreshListener(this);
 	}
 
 	private void initCustom() {
 		record_lv = (XListView) findViewById(R.id.record_lv);
 		loading_rl = (RelativeLayout) findViewById(R.id.loading_rl);
+		swipe_srl = (SwipeRefreshLayout) findViewById(R.id.swipe_srl);
+		swipe_srl.setColorScheme(R.color.blue_light, R.color.green_light, R.color.orange_light, R.color.red_light);
 		
 		record_lv.setPullLoadEnable(false);
-		record_lv.setPullRefreshEnable(true);
+		record_lv.setPullRefreshEnable(false);
 		record_lv.setOverScrollMode(View.OVER_SCROLL_NEVER);
 		
 		sharePrefer = getSharedPreferences(UserInfoUtils.FileName, MODE_PRIVATE);

@@ -5,7 +5,10 @@ import java.util.Vector;
 
 import com.koolbao.saler.R;
 import com.koolbao.saler.utils.DownImage;
+
 import android.content.Context;
+import android.text.Html;
+import android.text.method.LinkMovementMethod;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -79,7 +82,8 @@ public class BBSReplyAdapter extends BaseAdapter {
 			
 			reply_nick_tv.setText(user_nick);
 			reply_time_tv.setText(created);
-			reply_content_tv.setText(content);
+			reply_content_tv.setText(Html.fromHtml(content));
+			reply_content_tv.setMovementMethod(LinkMovementMethod.getInstance());
 			
 			if (img_url != null && !img_url.isEmpty()) {
 				DownImage.with(mInflater.getContext()).load(img_url).into(reply_img);

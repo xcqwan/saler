@@ -18,6 +18,8 @@ import com.koolbao.saler.widge.XListView.IXListViewListener;
 
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.support.v4.widget.SwipeRefreshLayout;
+import android.support.v4.widget.SwipeRefreshLayout.OnRefreshListener;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.AdapterView;
@@ -31,7 +33,7 @@ import android.widget.Toast;
 import android.content.Intent;
 import android.content.SharedPreferences;
 
-public class CommunicateActivity extends BaseActivity implements OnClickListener, IXListViewListener, OnItemClickListener {
+public class CommunicateActivity extends BaseActivity implements OnClickListener, IXListViewListener, OnItemClickListener, OnRefreshListener {
 	public final int FRESH_TAB = 1;
 	public final int ACTIVITY_TAB = 2;
 	public final int QUESTION_TAB = 3;
@@ -45,6 +47,7 @@ public class CommunicateActivity extends BaseActivity implements OnClickListener
 	
 	private RelativeLayout loading_rl;
 	private XListView post_lv;
+	private SwipeRefreshLayout swipe_srl;
 	private PostAdapter postAdapter;
 
 	private String lastRefreshTime = "刚刚";
@@ -107,6 +110,7 @@ public class CommunicateActivity extends BaseActivity implements OnClickListener
 	}
 	
 	private void onLoad() {
+		swipe_srl.setRefreshing(false);
 		post_lv.stopRefresh();
 		post_lv.stopLoadMore();
 		post_lv.setRefreshTime(lastRefreshTime);
@@ -124,6 +128,7 @@ public class CommunicateActivity extends BaseActivity implements OnClickListener
 		question_btn.setOnClickListener(this);
 		post_lv.setXListViewListener(this);
 		post_lv.setOnItemClickListener(this);
+		swipe_srl.setOnRefreshListener(this);
 		
 		search_sv.setOnQueryTextListener(new OnQueryTextListener() {
 			
@@ -148,9 +153,11 @@ public class CommunicateActivity extends BaseActivity implements OnClickListener
 		post_lv = (XListView) findViewById(R.id.post_lv);
 		loading_rl = (RelativeLayout) findViewById(R.id.loading_rl);
 		search_sv = (SearchView) findViewById(R.id.search_sv);
+		swipe_srl = (SwipeRefreshLayout) findViewById(R.id.swipe_srl);
+		swipe_srl.setColorScheme(R.color.blue_light, R.color.green_light, R.color.orange_light, R.color.red_light);
 		
 		post_lv.setPullLoadEnable(false);
-		post_lv.setPullRefreshEnable(true);
+		post_lv.setPullRefreshEnable(false);
 		//解决列表拖动到上下边界时出现的蓝色阴影
 		post_lv.setOverScrollMode(View.OVER_SCROLL_NEVER);
 		
